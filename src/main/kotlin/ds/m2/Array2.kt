@@ -1,4 +1,4 @@
-package m2
+package ds.m2
 
 import java.util.*
 

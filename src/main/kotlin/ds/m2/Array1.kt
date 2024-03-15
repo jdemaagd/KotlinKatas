@@ -1,6 +1,6 @@
-package m2
+package ds.m2
 
-import m1.User
+import ds.m1.User
 
 fun main() {
     // CREATE ARRAYS

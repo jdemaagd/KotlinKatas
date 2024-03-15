@@ -1,4 +1,4 @@
-package m1
+package ds.m1
 
 fun main() {
     // 1: can be found in first iteration, example of best case
@@ -12,7 +12,9 @@ fun main() {
     find(input, target)
 }
 
-private fun find(input: IntArray, item: Int) {
+private fun find(
+    input: IntArray, item: Int
+) {
     for (i in input.indices) {
         if (input[i] == item) {
             print("Item found at index - $i")

@@ -1,4 +1,4 @@
-package m2
+package ds.m2
 
 import java.util.*
 
@@ -13,9 +13,11 @@ class Vector<E> {
         this.elements = arrayOf()
     }
 
-    constructor(initialCapacity: Int) {
+    constructor(
+        initialCapacity: Int
+    ) {
         if (initialCapacity > 0) {
-            this.elements = Array(initialCapacity) {i -> null}
+            this.elements = Array(initialCapacity) { i -> null }
         } else if (initialCapacity == 0) {
             this.elements = emptyArray()
         } else {
@@ -23,14 +25,18 @@ class Vector<E> {
         }
     }
 
-    fun add(element: E): Boolean {
+    fun add(
+        element: E
+    ): Boolean {
         var a = elements
         val s = size
         if (s == a.size) {
-            val newArray = arrayOfNulls<Any>(s + if (s < minCapacityIncrement / 2)
-                minCapacityIncrement
-            else
-                s shr 1)
+            val newArray = arrayOfNulls<Any>(
+                s + if (s < minCapacityIncrement / 2)
+                    minCapacityIncrement
+                else
+                    s shr 1
+            )
             System.arraycopy(a, 0, newArray, 0, s)
             a = newArray
             elements = a
@@ -40,7 +46,10 @@ class Vector<E> {
         return true
     }
 
-    fun add(index: Int, element: E) {
+    fun add(
+        index: Int,
+        element: E
+    ) {
         var a = elements
         val s = size
         if (index > s || index < 0) {
@@ -59,7 +68,9 @@ class Vector<E> {
         size = s + 1
     }
 
-    fun get(index: Int): E {
+    fun get(
+        index: Int
+    ): E {
         if (index >= size)
             throwIndexOutOfBoundsException(index, size)
         return elements[index] as E
@@ -74,7 +85,9 @@ class Vector<E> {
         return oldValue
     }
 
-    fun remove(index: Int): E {
+    fun remove(
+        index: Int
+    ): E {
         if (index >= size)
             throwIndexOutOfBoundsException(index, size)
 
@@ -88,7 +101,9 @@ class Vector<E> {
         return oldValue
     }
 
-    fun remove(element: E): Boolean {
+    fun remove(
+        element: E
+    ): Boolean {
         for (index in 0 until size) {
             if (element == elements[index]) {
                 val numMoved = size - index - 1
@@ -109,7 +124,9 @@ class Vector<E> {
         return indexOf(element) >= 0
     }
 
-    fun indexOf(element: E): Int {
+    fun indexOf(
+        element: E
+    ): Int {
         if (element == null) {
             for (i in 0 until size)
                 if (elements[i] == null)
@@ -122,7 +139,9 @@ class Vector<E> {
         return -1
     }
 
-    fun lastIndexOf(element: E): Int {
+    fun lastIndexOf(
+        element: E
+    ): Int {
         if (element == null) {
             for (i in size - 1 downTo 0)
                 if (elements[i] == null)
@@ -146,7 +165,9 @@ class Vector<E> {
         return elements.copyOf(size)
     }
 
-    private fun newCapacity(currentCapacity: Int): Int {
+    private fun newCapacity(
+        currentCapacity: Int
+    ): Int {
         val increment = if (currentCapacity < minCapacityIncrement / 2)
             minCapacityIncrement
         else
@@ -154,14 +175,18 @@ class Vector<E> {
         return currentCapacity + increment
     }
 
-    private fun throwIndexOutOfBoundsException(index: Int, size: Int): IndexOutOfBoundsException {
+    private fun throwIndexOutOfBoundsException(
+        index: Int, size: Int
+    ): IndexOutOfBoundsException {
         throw IndexOutOfBoundsException("Invalid index $index, size is $size")
     }
 
     override fun toString(): String = elements.contentToString()
 }
 
-fun main(args: Array<String>) {
+fun main(
+    args: Array<String>
+) {
     val vector = Vector<String>(10)
     println("Size of newly created vector is : ${vector.size()}")
     println("Elements in vector are : $vector")

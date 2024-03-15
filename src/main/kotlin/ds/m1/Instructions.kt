@@ -1,4 +1,4 @@
-package m1
+package ds.m1
 
 // NOTE: Count Instructions
 fun main() {
