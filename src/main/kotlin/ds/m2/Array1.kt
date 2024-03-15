@@ -1,46 +1,39 @@
 package ds.m2
 
-import ds.m1.User
+// NOTE: Array Access
+fun main(args: Array<String>) {
+    val languages = arrayOf("Kotlin", "Java", "C", "C++", "C#", "JavaScript", "Python")
+    println("1st language in the array is : ${languages[0]}")
+    println("2nd language in the array is : ${languages[1]}")
+    println("3rd language in the array is : ${languages[2]}")
+    println("4th language in the array is : ${languages[3]}")
+    println("5th language in the array is : ${languages[4]}")
+    println("6th language in the array is : ${languages[5]}")
+    println("7th language in the array is : ${languages[6]}")
+    // println("8th language in the array is : ${languages[7]}")
 
-fun main() {
-    // CREATE ARRAYS
-    val friends = arrayOf("Rivu", "Subin", "Sid", "Susri", "Ramya", "Sachin")
-
-    // NOTE: array of Any type, but not recommended
-    val info = arrayOf("Rivu", 32, 5.11, "rivu@abc.com")
-    //val info2: Array<String> = arrayOf("Rivu", 32, 5.11, "rivu@abc.com")
-
-    val numbers = arrayOf(1, 3, 5, 7, 9)
-    val oddNums = intArrayOf(1, 3, 5, 7, 9)
-
-    val users = arrayOf(
-        User("Chandra Sekhar", "Nayak", "0909090909", "chansek@live.com"),
-        User("Utkarsh", "Asthana", "1234123412", "utku@xyz.com"),
-        User("Sachin", "Kamble", "7878787878", "sachin@abc.com"),
-        User("Ramya", "K", "0000000000", "ramu@zzz.com"),
-        User("Subin", "S", "1234512345", "sub@s.com")
-    )
-
-    val serverUsers: Array<User?> = arrayOf(null, null, null, null, null)
-    val biggerNullArray: Array<User?> = arrayOfNulls(100)
-
-    // ACCESS ARRAY
-    val languages = arrayOf("Kotlin", "Java", "C", "C++", "C#", "JavaScript")
     val firstLanguage = languages[0]
-    val fifthLanguage = languages[4]
+    val secondLanguage = languages[1]
+    val thirdLanguage = languages[2]
+    // val invalidIndex = languages[-1]
 
-    //val invalidLanguage = languages[-1]
-    //val outLanguage = languages[100]
+    println()
+    println("2nd language in the array is : ${languages.get(1)}")
+    println("4th language in the array is : ${languages.get(3)}")
+    println("5th language in the array is : ${languages.get(4)}")
 
-    val secondLanguage = languages.get(1)
-    val sixthLanguage = languages.get(5)
+    println()
+    println("1st language in the array is : ${languages.component1()}")
+    println("2nd language in the array is : ${languages.component2()}")
 
-    val firstLang = languages.component1()
-    val secLang = languages.component2()
-
-    // elementAt(), elementAtOrElse(), elementAtOrNull(), getOrElse(), and getOrNull()
+    println()
     val firstItem = languages.elementAt(0)
     val secItem = languages.elementAt(0)
     val tenthItem = languages.elementAtOrElse(9) { _ -> "Not Available" }
     val eleventhItem = languages.elementAtOrNull(10)
+
+    println("1st item - $firstItem")
+    println("2nd item - $secItem")
+    println("10th item - $tenthItem")
+    println("11th item - $eleventhItem")
 }
