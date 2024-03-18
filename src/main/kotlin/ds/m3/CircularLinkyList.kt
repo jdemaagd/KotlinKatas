@@ -5,7 +5,11 @@ class CircularLinkyList<E> {
     private var head: Node<E>? = null
     private var tail: Node<E>? = null
 
-    private inner class Node<E> constructor(internal var prev: Node<E>?, internal var element: E, internal var next: Node<E>?)
+    private inner class Node<E> constructor(
+        var prev: Node<E>?,
+        var element: E,
+        var next: Node<E>?
+    )
 
     fun getFirst() = head?.element
 
@@ -84,9 +88,10 @@ class CircularLinkyList<E> {
         return -1
     }
 
+    // NOTE: write snippet to link a node at head of a circular linked list
     private fun linkHead(element: E) {
         val h = head
-        val newNode = Node(tail, element, h)
+        val newNode = Node<E>(tail, element, h)
         head = newNode
         if (h == null) {
             tail = newNode
@@ -123,6 +128,7 @@ class CircularLinkyList<E> {
         size++
     }
 
+    // NOTE: write a snippet to unlink a node from circular linked list
     private fun unlink(curr: Node<E>): E {
         val element = curr.element
         val next = curr.next
@@ -174,6 +180,7 @@ class CircularLinkyList<E> {
         return "Index: $index, Size: $size"
     }
 
+    // NOTE: implement toString() method of circular linked list
     override fun toString(): String {
         var curr = head
         if (curr == null) return "[]"
