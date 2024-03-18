@@ -29,3 +29,9 @@
 ## Resources
 
 - [Kotlin command-line compiler](https://kotlinlang.org/docs/command-line.html)
+
+
+/Users/jdemaagd/REPOS/Practice/KotlinKatas/src/main/kotlin/ds/m1/Analysis.kt:10:17
+
+Kotlin: Cannot access built-in declaration 'kotlin.intArrayOf'. 
+Ensure that you have a dependency on the Kotlin standard library
