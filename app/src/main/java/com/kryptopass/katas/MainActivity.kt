@@ -16,15 +16,18 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.kryptopass.katas.ui.theme.KotlinKatasTheme
+import com.kryptopass.katas.ui.theme.KatasTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            KotlinKatasTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+            KatasTheme {
+                Scaffold(
+                    modifier = Modifier.fillMaxSize(),
+
+                ) { innerPadding ->
                     Greeting(
                         name = stringResource(id = R.string.app_name),
                         modifier = Modifier.padding(innerPadding)
@@ -53,7 +56,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
-    KotlinKatasTheme {
+    KatasTheme {
         Greeting(stringResource(id = R.string.app_name))
     }
 }

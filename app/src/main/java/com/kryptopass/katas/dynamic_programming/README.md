@@ -1,5 +1,12 @@
 # Dynamic Programming
 
+## Intro
+
+- Name invented by Richard Bellman in the 1950s
+- Nothing dynamic about problems we will tackle
+- Programming meant scheduling or planning in 1950s
+- Working definition: recursion without repetition
+
 ## Identify if it is an optimization problem
 
 - maximization
@@ -36,3 +43,26 @@
 - break problem into smaller sub-problems
 - do not think about overall complexity of problem
 - delegate smaller sub-problem and so on until problem is trivial
+
+## Quiz: The Tribonacci sequence Tn is defined as follows:
+
+```
+T0 = 0, T1 = 1, T2 = 1
+Tn = Tn-1 + Tn-2 + Tn-3
+Consider the following recursive code which implements the mathematical definition:
+    int nthtibonacci(int n) {
+        if n == 0 or n == 1:
+            return n
+        if n == 2 
+            return 1
+        return nthtibonacci(n - 1) + nthtibonacci(n - 2) + nthtibonacci(n - 3)
+    }
+
+
+What is the running time complexity of this implementation?
+
+Linear
+Quadratic
+Some higher-order polynomial in n
+Some exponential in n                   CHECK
+```
