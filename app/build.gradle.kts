@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.kryptopass.kotlinkatas"
+    namespace = "com.kryptopass.katas"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.kryptopass.kotlinkatas"
+        applicationId = "com.kryptopass.katas"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
