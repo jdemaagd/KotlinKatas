@@ -1,4 +1,6 @@
-package com.kryptopass.katas.dynamic_programming
+package com.kryptopass.katas.dynamic_programming.m1
+
+import com.kryptopass.katas.dynamic_programming.MOD
 
 fun main() {
     println(nChooseRMathOptimized(5, 3))
@@ -42,7 +44,9 @@ Constraints:
     Auxiliary space: O(1)
     Total space: O(1)
  */
-fun nChooseRMathOptimized(n: Int, r: Int): Int {
+fun nChooseRMathOptimized(
+    n: Int, r: Int
+): Int {
     if (r > n) return 0
     if (r == n || r == 0) return 1
 
@@ -65,7 +69,9 @@ fun nChooseRMathOptimized(n: Int, r: Int): Int {
     return result.toInt()
 }
 
-fun exponentiate(v: Int, p: Int): Int {
+fun exponentiate(
+    v: Int, p: Int
+): Int {
     var ret = 1
     var tempV = v.toLong()
     var tempP = p

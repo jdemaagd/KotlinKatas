@@ -1,4 +1,7 @@
-package com.kryptopass.katas.dynamic_programming
+package com.kryptopass.katas.dynamic_programming.m1
+
+import com.kryptopass.katas.dynamic_programming.MOD
+import com.kryptopass.katas.dynamic_programming.TABLE2D
 
 fun main() {
     println(nChooseRIterative(5, 3))
@@ -42,7 +45,9 @@ Constraints:
     Auxiliary space: O(n * r)
     Total space: O(n * r)
  */
-fun nChooseRIterative(n: Int, r: Int): Int {
+fun nChooseRIterative(
+    n: Int, r: Int
+): Int {
     if (r > n) return 0
 
     // TABLE2D = Array(n + 1) { Array(r + 1) { 0 } }
@@ -66,7 +71,9 @@ fun nChooseRIterative(n: Int, r: Int): Int {
     Auxiliary space: O(n)
     Total space: O(n)
  */
-fun nChooseRBruteForce(n: Int, r: Int): Int {
+fun nChooseRBruteForce(
+    n: Int, r: Int
+): Int {
     if (r > n) return 0
     if (n == r || r == 0) return 1
 

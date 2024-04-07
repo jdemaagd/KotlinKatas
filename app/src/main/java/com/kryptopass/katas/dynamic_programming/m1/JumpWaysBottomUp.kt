@@ -1,4 +1,4 @@
-package com.kryptopass.katas.dynamic_programming
+package com.kryptopass.katas.dynamic_programming.m1
 
 import kotlin.math.pow
 import kotlin.math.sqrt
@@ -38,7 +38,9 @@ Constraints
     Auxiliary space: O(n)
     Total space: O(n)
  */
-fun jumpWaysBottomUp(n: Int): Long {
+fun jumpWaysBottomUp(
+    n: Int
+): Long {
     val table = LongArray(n + 1)
     table[0] = 1
     table[1] = 1
@@ -55,7 +57,9 @@ fun jumpWaysBottomUp(n: Int): Long {
     Auxiliary space: O(1)
     Total space: O(1)
  */
-fun jumpWaysMemoizationSpaceOptimized(n: Int): Long {
+fun jumpWaysMemoizationSpaceOptimized(
+    n: Int
+): Long {
     val dp = LongArray(3)
     dp[0] = 1
     dp[1] = 1
@@ -72,7 +76,9 @@ fun jumpWaysMemoizationSpaceOptimized(n: Int): Long {
     Auxiliary space: O(1)
     Total space: O(1)
  */
-fun jumpWaysClosedForm(n: Int): Long {
+fun jumpWaysClosedForm(
+    n: Int
+): Long {
     val sqrt5 = sqrt(5.0)
 
     val fibN = ((1 + sqrt5) / 2).pow(n + 1) - ((1 - sqrt5) / 2).pow(n + 1)

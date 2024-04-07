@@ -1,4 +1,4 @@
-package com.kryptopass.katas.dynamic_programming
+package com.kryptopass.katas.dynamic_programming.m1
 
 fun main() {
     println(jumpWaysTopDown(3))
@@ -35,12 +35,16 @@ Constraints
     Auxiliary space: O(n)
     Total space: O(n)
  */
-fun jumpWaysTopDown(n: Int): Long {
+fun jumpWaysTopDown(
+    n: Int
+): Long {
     val memo = MutableList(n + 1) { -1L }
     return countWays(n, memo)
 }
 
-fun countWays(n: Int, memo: MutableList<Long>): Long {
+fun countWays(
+    n: Int, memo: MutableList<Long>
+): Long {
     if (n == 0 || n == 1) return 1L
 
     if (memo[n] != -1L) return memo[n]

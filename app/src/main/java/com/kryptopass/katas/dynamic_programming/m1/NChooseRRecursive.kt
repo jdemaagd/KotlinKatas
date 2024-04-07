@@ -1,4 +1,7 @@
-package com.kryptopass.katas.dynamic_programming
+package com.kryptopass.katas.dynamic_programming.m1
+
+import com.kryptopass.katas.dynamic_programming.MOD
+import com.kryptopass.katas.dynamic_programming.TABLE2D
 
 fun main() {
     println(nChooseRRecursive(5, 3))
@@ -42,7 +45,9 @@ Constraints:
     * Auxiliary space: O(n * r).
     * Total space: O(n * r).
  */
-fun nChooseRRecursive(n: Int, r: Int): Int {
+fun nChooseRRecursive(
+    n: Int, r: Int
+): Int {
     //com.kryptopass.dp.getTABLE2D = Array(n + 1) { Array(r + 1) { -1 } }
     TABLE2D = ArrayList(n + 1)
     for (i in 0..n) TABLE2D.add(ArrayList(r + 1))
@@ -51,13 +56,16 @@ fun nChooseRRecursive(n: Int, r: Int): Int {
     return nChooseRRecursiveHelper(n, r)
 }
 
-fun nChooseRRecursiveHelper(n: Int, r: Int): Int {
+fun nChooseRRecursiveHelper(
+    n: Int, r: Int
+): Int {
     if (r > n) return 0
     if (n == r || r == 0) return 1
 
     if (TABLE2D[n][r] != -1) return TABLE2D[n][r]
 
-    TABLE2D[n][r] = (nChooseRRecursiveHelper(n - 1, r) + nChooseRRecursiveHelper(n - 1, r - 1)) % MOD
+    TABLE2D[n][r] =
+        (nChooseRRecursiveHelper(n - 1, r) + nChooseRRecursiveHelper(n - 1, r - 1)) % MOD
 
     return TABLE2D[n][r]
 }

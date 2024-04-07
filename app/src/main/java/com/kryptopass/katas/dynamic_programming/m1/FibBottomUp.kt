@@ -1,4 +1,4 @@
-package com.kryptopass.katas.dynamic_programming
+package com.kryptopass.katas.dynamic_programming.m1
 
 fun main() {
     println(fibBottomUp(1))
