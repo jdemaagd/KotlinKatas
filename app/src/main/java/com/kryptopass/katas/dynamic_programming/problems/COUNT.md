@@ -6,13 +6,13 @@ that is he can climb either one step or two steps at a time.
 If there are n steps in total, in how many different ways can he climb the staircase?
 
 def f(n):
-    table = array of size n+1
+    table = array of size n + 1
     
     if n == 1 or n == 2:
         return n
     
     for i in 3 to n:
-        table[i] = table[i-1] + table[i-2]
+        table[i] = table[i - 1] + table[i - 2]
         
     return table[n]
 
