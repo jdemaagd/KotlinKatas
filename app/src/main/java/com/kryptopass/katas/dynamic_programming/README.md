@@ -66,3 +66,12 @@ Quadratic
 Some higher-order polynomial in n
 Some exponential in n                   CHECK
 ```
+
+## [TopDown vs BottomUp](https://www.shiksha.com/online-courses/articles/difference-between-top-down-and-bottom-up-parsing-blogId-158057)
+
+- TopDown
+    - recursive
+    - starts at highest level of parse tree and works its way down to leaves
+- BottomUp
+    - iterative
+    - starts with input tokens (leaves of parse tree) and builds up to start symbol of grammar

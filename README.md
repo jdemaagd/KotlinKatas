@@ -29,3 +29,5 @@
 ## Resources
 
 - [Kotlin command-line compiler](https://kotlinlang.org/docs/command-line.html)
+- [System Design](https://levelup.gitconnected.com/system-design-interview-question-design-spotify-4a8a79697dda)
+- [TopDown vs BottomUp](https://www.enjoyalgorithms.com/blog/top-down-memoization-vs-bottom-up-tabulation)
