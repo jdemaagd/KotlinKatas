@@ -1,15 +1,15 @@
 package com.kryptopass.katas.dynamic_programming
 
 fun main() {
-    println(bottomUpFib(1))
-    println(bottomUpFib(2))
-    println(bottomUpFib(3))
-    println(bottomUpFib(4))
-    println(bottomUpFib(5))
-    println(bottomUpFib(6))
-    println(bottomUpFib(7))
-    println(bottomUpFib(8))
-    println(bottomUpFib(9))
+    println(fibBottomUp(1))
+    println(fibBottomUp(2))
+    println(fibBottomUp(3))
+    println(fibBottomUp(4))
+    println(fibBottomUp(5))
+    println(fibBottomUp(6))
+    println(fibBottomUp(7))
+    println(fibBottomUp(8))
+    println(fibBottomUp(9))
 }
 
 /*
@@ -37,7 +37,9 @@ Constraints:
     Auxiliary space: O(n)
     Total space: O(n)
  */
-fun bottomUpFib(n: Int): Int {
+fun fibBottomUp(
+    n: Int
+): Int {
     val table = IntArray(n + 1)
     table[0] = 0
     table[1] = 1

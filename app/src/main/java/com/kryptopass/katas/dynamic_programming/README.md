@@ -4,7 +4,6 @@
 
 - Name invented by Richard Bellman in the 1950s
 - Nothing dynamic about problems we will tackle
-- Programming meant scheduling or planning in 1950s
 - Working definition: recursion without repetition
 
 ## Identify if it is an optimization problem

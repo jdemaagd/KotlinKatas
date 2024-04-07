@@ -1,15 +1,15 @@
 package com.kryptopass.katas.dynamic_programming
 
 fun main() {
-    println(bottomUpSpaceOptimizedFib(1))
-    println(bottomUpSpaceOptimizedFib(2))
-    println(bottomUpSpaceOptimizedFib(3))
-    println(bottomUpSpaceOptimizedFib(4))
-    println(bottomUpSpaceOptimizedFib(5))
-    println(bottomUpSpaceOptimizedFib(6))
-    println(bottomUpSpaceOptimizedFib(7))
-    println(bottomUpSpaceOptimizedFib(8))
-    println(bottomUpSpaceOptimizedFib(9))
+    println(fibBottomUpSpaceOptimized(1))
+    println(fibBottomUpSpaceOptimized(2))
+    println(fibBottomUpSpaceOptimized(3))
+    println(fibBottomUpSpaceOptimized(4))
+    println(fibBottomUpSpaceOptimized(5))
+    println(fibBottomUpSpaceOptimized(6))
+    println(fibBottomUpSpaceOptimized(7))
+    println(fibBottomUpSpaceOptimized(8))
+    println(fibBottomUpSpaceOptimized(9))
 }
 
 /*
@@ -37,7 +37,9 @@ Constraints:
     Auxiliary space: O(1)
     Total space: O(1)
  */
-fun bottomUpSpaceOptimizedFib(n: Int): Int {
+fun fibBottomUpSpaceOptimized(
+    n: Int
+): Int {
     if (n == 0) return 0
 
     var prevPrev = 0

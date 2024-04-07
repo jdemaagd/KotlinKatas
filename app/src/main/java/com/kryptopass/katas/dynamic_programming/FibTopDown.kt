@@ -1,15 +1,15 @@
 package com.kryptopass.katas.dynamic_programming
 
 fun main() {
-    println(topDownFib(1))
-    println(topDownFib(2))
-    println(topDownFib(3))
-    println(topDownFib(4))
-    println(topDownFib(5))
-    println(topDownFib(6))
-    println(topDownFib(7))
-    println(topDownFib(8))
-    println(topDownFib(9))
+    println(fibTopDown(1))
+    println(fibTopDown(2))
+    println(fibTopDown(3))
+    println(fibTopDown(4))
+    println(fibTopDown(5))
+    println(fibTopDown(6))
+    println(fibTopDown(7))
+    println(fibTopDown(8))
+    println(fibTopDown(9))
 }
 
 /*
@@ -39,11 +39,13 @@ Constraints:
  */
 val memo = HashMap<Int, Int>()
 
-fun topDownFib(n: Int): Int {
+fun fibTopDown(
+    n: Int
+): Int {
     if (memo.containsKey(n)) return memo[n]!!
 
     if (n == 0 || n == 1) return n
 
-    memo[n] = topDownFib(n - 1) + topDownFib(n - 2)
+    memo[n] = fibTopDown(n - 1) + fibTopDown(n - 2)
     return memo[n]!!
 }
