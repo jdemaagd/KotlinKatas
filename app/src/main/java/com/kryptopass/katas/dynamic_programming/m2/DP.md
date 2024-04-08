@@ -13,7 +13,7 @@
     - e.g. permutations, combinations
     - time/space complexity: exponential
 - Level 2 -> constraints combinatorial enumeration,
-    - e.g. combination of certain sum/ certain size (backtracking)
+    - e.g. combination of certain sum/certain size (backtracking)
     - time/space complexity: exponential
 - Level 3 -> compute single value (output from enumeration)
     - time/space complexity: polynomial
