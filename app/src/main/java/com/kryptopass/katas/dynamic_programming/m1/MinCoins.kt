@@ -40,7 +40,9 @@ Constraints:
     Auxiliary space: O(value)
     Total space: O(n + value)
  */
-fun minCoins(coins: ArrayList<Int>, value: Int): Int {
+fun minCoins(
+    coins: ArrayList<Int>, value: Int
+): Int {
     if (value == 0) return 0
 
     var globalMin = 100005
@@ -60,7 +62,9 @@ fun minCoins(coins: ArrayList<Int>, value: Int): Int {
     Auxiliary space: O(value)
     Total space: O(n + value)
  */
-fun minCoinsDP(coins: List<Int>, value: Int): Int {
+fun minCoinsDP(
+    coins: List<Int>, value: Int
+): Int {
     val dp = IntArray(value + 1) { Int.MAX_VALUE }
 
     dp[0] = 0

@@ -2,13 +2,17 @@ package com.kryptopass.katas.dynamic_programming.m2
 
 fun main() {
     println(
-        uniquePathsWithObstacles(arrayListOf(
-            arrayListOf(0, 0, 0), arrayListOf(0, 1, 0), arrayListOf(0, 0, 0)))
+        uniquePathsWithObstacles(
+            arrayListOf(
+                arrayListOf(0, 0, 0), arrayListOf(0, 1, 0), arrayListOf(0, 0, 0)
+            )
+        )
     )
 
     println(
         uniquePathsWithObstacles(
-            arrayListOf(arrayListOf(0, 1), arrayListOf(0, 0)))
+            arrayListOf(arrayListOf(0, 1), arrayListOf(0, 0))
+        )
     )
 }
 
@@ -50,7 +54,9 @@ n == obstacleGrid[i].length
 1 <= m, n <= 100
 obstacleGrid[i][j] is 0 or 1
  */
-fun uniquePathsWithObstacles(grid: ArrayList<ArrayList<Int>>): Int {
+fun uniquePathsWithObstacles(
+    grid: ArrayList<ArrayList<Int>>
+): Int {
     val n = grid.size
     val m = grid[0].size
     val table = Array(n) { IntArray(m) }

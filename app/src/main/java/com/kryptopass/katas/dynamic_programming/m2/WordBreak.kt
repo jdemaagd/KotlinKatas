@@ -37,7 +37,9 @@ Solution Reconstruction
 Time complexity: O(n^2) -> consider string construction -> O(n^3)
 Space complexity: O(n)
  */
-fun wordBreak(s: String, wordDict: ArrayList<String>): Boolean {
+fun wordBreak(
+    s: String, wordDict: ArrayList<String>
+): Boolean {
     val n = s.length
     val table = ArrayList<Boolean>(n + 1)
 

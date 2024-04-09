@@ -46,7 +46,9 @@ Constraints:
     Auxiliary space: O(n)
     Total space: O(n)
  */
-fun minCostClimbingStairsRecursiveMemo(cost: ArrayList<Int>): Int {
+fun minCostClimbingStairsRecursiveMemo(
+    cost: ArrayList<Int>
+): Int {
     // dp.addAll(MutableList(cost.size + 1) { 0 })
     TABLE1D = ArrayList<Int>(cost.size + 1)
     for (i in 0..cost.size + 1) TABLE1D.add(-1)
@@ -55,7 +57,9 @@ fun minCostClimbingStairsRecursiveMemo(cost: ArrayList<Int>): Int {
     return minCostClimbingStairsRecursiveMemoHelper(cost.size, cost)
 }
 
-fun minCostClimbingStairsRecursiveMemoHelper(n: Int, cost: ArrayList<Int>): Int {
+fun minCostClimbingStairsRecursiveMemoHelper(
+    n: Int, cost: ArrayList<Int>
+): Int {
     if (n < 2) return 0
 
     if (TABLE1D[n] != -1) return TABLE1D[n]

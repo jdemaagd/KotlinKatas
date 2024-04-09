@@ -7,7 +7,7 @@
     - Memoization (Top Down)
     - Tabulation (Bottom Up) -> Class Focus
 
-## Recursion Extension/optimization
+## Recursion Optimization/Extension
 
 - Level 1 -> combinatorial enumeration of given input,
     - e.g. permutations, combinations

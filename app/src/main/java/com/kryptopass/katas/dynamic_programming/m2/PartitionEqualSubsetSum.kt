@@ -25,7 +25,9 @@ Note:
 1. Each of the array element will not exceed 100
 2. The array size will not exceed 200
  */
-fun partitionEqualSubsetSum(nums: ArrayList<Int>): Boolean {
+fun partitionEqualSubsetSum(
+    nums: ArrayList<Int>
+): Boolean {
     val sum = nums.sum()
     if (sum % 2 != 0) return false
 
