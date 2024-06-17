@@ -1,12 +1,18 @@
 package com.kryptopass.katas.dsa.d01
 
+/*
+An array is monotonic if it is either monotone increasing or monotone decreasing.
+An array is monotone increasing if all its elements from left to right are non-decreasing.
+An array is monotone decreasing if all its elements from left to right are non-increasing.
+Given an integer array return true if the given array is monotonic, or false otherwise.
+ */
 fun main() {
-    monotonicArray(intArrayOf(1, 2, 2, 3)).also { println(it) }
-    monotonicArray(intArrayOf(6, 5, 4, 4)).also { println(it) }
-    monotonicArray(intArrayOf(1, 3, 2)).also { println(it) }
-    monotonicArray(intArrayOf()).also { println(it) }
-    monotonicArray(intArrayOf(11)).also { println(it) }
-    monotonicArray(intArrayOf(1, 1, 1, 1)).also { println(it) }
+    monotonicArray(intArrayOf(1, 2, 2, 3)).also { println(it) }     // true
+    monotonicArray(intArrayOf(6, 5, 4, 4)).also { println(it) }     // true
+    monotonicArray(intArrayOf(1, 3, 2)).also { println(it) }        // false
+    monotonicArray(intArrayOf()).also { println(it) }               // true
+    monotonicArray(intArrayOf(11)).also { println(it) }             // true
+    monotonicArray(intArrayOf(1, 1, 1, 1)).also { println(it) }     // true
 }
 
 // Time complexity: O(n)

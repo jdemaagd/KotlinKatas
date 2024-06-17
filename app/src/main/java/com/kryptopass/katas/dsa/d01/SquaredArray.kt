@@ -1,5 +1,11 @@
 package com.kryptopass.katas.dsa.d01
 
+/*
+You are given an array of Integers in which each subsequent value is not less than the previous
+  value.
+Write a function that takes this array as an input and returns a new array with the squares of
+  each number sorted in ascending order.
+ */
 fun main() {
     bruteForceSquaredArray(intArrayOf(-4, -1, 0, 3, 10)).contentToString().also { println(it) }
     bruteForceSquaredArray(intArrayOf(-7, -3, 2, 3, 11)).contentToString().also { println(it) }
