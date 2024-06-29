@@ -1,4 +1,4 @@
-package com.kryptopass.katas.dsa.d04
+package com.kryptopass.katas.dsa.`04_backtracking`
 
 /*
 Given a collection of numbers, nums, that might contain duplicates,

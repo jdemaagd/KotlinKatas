@@ -1,4 +1,4 @@
-package com.kryptopass.katas.dsa.d06
+package com.kryptopass.katas.dsa.`06_backtracking`
 
 /*
 Given two integers n and k, return all possible combinations of k numbers chosen from the range [1, n].

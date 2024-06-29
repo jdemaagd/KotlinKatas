@@ -1,4 +1,4 @@
-package com.kryptopass.katas.dsa.d02
+package com.kryptopass.katas.dsa.`02_recursion`
 
 import kotlin.math.pow
 

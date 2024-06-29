@@ -1,4 +1,4 @@
-package com.kryptopass.katas.dsa.d04
+package com.kryptopass.katas.dsa.`04_backtracking`
 
 /*
 Given an array nums of distinct integers, return all the possible permutations.

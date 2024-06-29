@@ -1,4 +1,4 @@
-package com.kryptopass.katas.dsa.d05
+package com.kryptopass.katas.dsa.`05_backtracking`
 
 /*
 Given an integer array of unique elements, return all possible subsets (power set).

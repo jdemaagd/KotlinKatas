@@ -1,4 +1,4 @@
-package com.kryptopass.katas.dsa.d06
+package com.kryptopass.katas.dsa.`06_backtracking`
 
 /*
 Given an array of distinct integers candidates and a target integer target,

@@ -1,4 +1,4 @@
-package com.kryptopass.katas.dsa.d07
+package com.kryptopass.katas.dsa.`07_backtracking`
 
 /*
 Given a collection of candidate numbers (`candidates`) and a target number (`target`),

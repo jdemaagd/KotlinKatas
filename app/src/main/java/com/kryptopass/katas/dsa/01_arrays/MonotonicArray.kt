@@ -1,4 +1,4 @@
-package com.kryptopass.katas.dsa.d01
+package com.kryptopass.katas.dsa.`01_arrays`
 
 /*
 An array is monotonic if it is either monotone increasing or monotone decreasing.

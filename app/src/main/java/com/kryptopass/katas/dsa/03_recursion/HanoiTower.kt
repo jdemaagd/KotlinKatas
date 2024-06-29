@@ -1,4 +1,4 @@
-package com.kryptopass.katas.dsa.d03
+package com.kryptopass.katas.dsa.`03_recursion`
 
 /*
 Tower of Hanoi:

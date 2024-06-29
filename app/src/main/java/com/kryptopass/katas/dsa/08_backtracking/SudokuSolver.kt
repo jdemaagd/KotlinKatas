@@ -1,4 +1,4 @@
-package com.kryptopass.katas.dsa.d08
+package com.kryptopass.katas.dsa.`08_backtracking`
 
 /*
 Write a program to solve a Sudoku puzzle by filling the empty cells.

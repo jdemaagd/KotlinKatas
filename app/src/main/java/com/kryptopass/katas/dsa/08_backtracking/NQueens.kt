@@ -1,4 +1,4 @@
-package com.kryptopass.katas.dsa.d08
+package com.kryptopass.katas.dsa.`08_backtracking`
 
 /*
 n-queens puzzle is problem of placing n queens on an n x n chessboard such that no two queens attack each other
