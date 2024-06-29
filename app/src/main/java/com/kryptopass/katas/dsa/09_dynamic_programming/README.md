@@ -33,6 +33,8 @@
 - Memoization / top-down approach
 - Tabulation / bottom-up approach
 - Space optimized tabulation approach
+- Following these steps will help with mastering DP
+    - and will help you solve new problems you have never encountered before
 
 ## Why does this Approach work?
 
