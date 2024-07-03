@@ -28,57 +28,32 @@ fun main() {
         charArrayOf('.', '.', '.', '4', '1', '9', '.', '.', '5'),
         charArrayOf('.', '.', '.', '.', '8', '.', '.', '7', '9')
     )
-
     solveSudoku(board)
 
-    // Print the solved board
     for (row in board) {
         println(row.joinToString(" "))
     }
 }
 
 /*
-Time Complexity Analysis -> 𝑂(9^81), worst case, due to combinatorial explosion of trying every
-  possible number in every cell, effective pruning reduces this significantly in practice
-1. Recursive Backtracking
-   each cell (empty cell `.`) can potentially take any digit from `1` to `9`
-   worst-case could be making up to `9` choices for each of `81` cells on board
-2. Pruning by `isValid` function
-   `isValid` function helps in pruning search space by rejecting invalid numbers for a given cell,
-     which significantly reduces actual number of recursive calls
-   although this pruning is substantial, it doesn't change theoretical worst-case complexity
-3. Practical Performance
-   practical complexity is much lower than 𝑂(9^81) due to effectiveness of pruning early
-   however, in worst-case scenario (such as having to try many combinations
-     before finding a valid solution or proving no solution exists), complexity remains exponential
-
-Space Complexity Analysis -> 𝑂(1)
-1. Recursion Stack
-   depth of recursion stack can go up to the number of cells, which is 81.
-   therefore, space complexity due to recursion stack is 𝑂(81) = 𝑂(1)
-2. Storage for the Board
-   board itself takes 𝑂(81) = 𝑂(1) space as it's fixed in size (9x9 grid)
-3. Auxiliary Space for `isValid` function
-   `isValid` function does not use any additional space that scales with input size,
-     so it doesn't contribute to space complexity
+Time Complexity Analysis -> 𝑂(1), board is fixed size
+    # operations is bounded by 9^(# empty cells) -> 9^81
+Space Complexity Analysis -> 𝑂(1), no n to track
+    max depth of recursion stack can be at most 81
  */
 fun solveSudoku(
     board: Array<CharArray>
 ) {
-    fun isValid(
-        row: Int,
-        col: Int,
-        num: Char
-    ): Boolean {
+    fun isValid(row: Int, col: Int, num: Char): Boolean {
         for (x in 0 until 9) {
             if (board[x][col] == num || board[row][x] == num) { // check row and column
                 return false
             }
 
-            // calculate start row and column index for 3x3 sub-box
+            // calculations to see board in a 3 x 3 sub-grid
             val r = 3 * (row / 3) + x / 3
             val c = 3 * (col / 3) + x % 3
-            if (board[r][c] == num) { // check 3x3 sub-box
+            if (board[r][c] == num) {
                 return false
             }
         }
@@ -86,27 +61,23 @@ fun solveSudoku(
         return true // valid `num`
     }
 
-    fun helper(): Boolean {
+    fun fillBoard(): Boolean {
         for (row in 0 until 9) {
             for (col in 0 until 9) {
-                if (board[row][col] == '.') { // identify next empty cell
+                if (board[row][col] == '.') {                   // identify next empty cell
                     for (num in '1'..'9') {
                         if (isValid(row, col, num)) {
-                            board[row][col] = num // place number in cell
-
-                            if (helper()) {
-                                return true
-                            }
-
-                            board[row][col] = '.' // backtracking step
+                            board[row][col] = num               // choose step
+                            if (fillBoard()) return true        // valid Sudoku board
+                            board[row][col] = '.'               // backtracking step
                         }
                     }
-                    return false // require backtrack, no numbers were valid (1-9)
+                    return false    // need to backtrack, no numbers (1 - 9) were valid
                 }
             }
         }
         return true // valid Sudoku board
     }
 
-    helper()
+    fillBoard()
 }
