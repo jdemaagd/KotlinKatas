@@ -29,7 +29,9 @@ fun main() {
 // NOTE: Time/Space Complexity is same as Fibonacci Sequence
 
 // Step 1: start with recursive solution
-fun climbStairsRecursive(n: Int): Int {
+fun climbStairsRecursive(
+    n: Int
+): Int {
     if (n < 3)
         return n
 
@@ -37,7 +39,9 @@ fun climbStairsRecursive(n: Int): Int {
 }
 
 // Step 2: memoization/top-down approach
-fun climbStairsMemo(n: Int): Int {
+fun climbStairsMemo(
+    n: Int
+): Int {
     val memo = mutableMapOf<Int, Int>()
 
     memo[0] = 0
@@ -56,7 +60,9 @@ fun climbStairsMemo(n: Int): Int {
 }
 
 // Step 3: tabulation/bottom-up approach
-fun climbStairsTab(n: Int): Int {
+fun climbStairsTab(
+    n: Int
+): Int {
     if (n == 0 || n == 1)
         return 1
 
@@ -72,7 +78,9 @@ fun climbStairsTab(n: Int): Int {
 }
 
 // Step 4: space optimized tabulation
-fun climbStairsSpaceOptimized(n: Int): Int {
+fun climbStairsSpaceOptimized(
+    n: Int
+): Int {
     if (n == 0 || n == 1)
         return 1
 
@@ -88,7 +96,9 @@ fun climbStairsSpaceOptimized(n: Int): Int {
     return curr
 }
 
-fun climbStairs(n: Int): Int {
+fun climbStairs(
+    n: Int
+): Int {
     if (n < 3)
         return n
 

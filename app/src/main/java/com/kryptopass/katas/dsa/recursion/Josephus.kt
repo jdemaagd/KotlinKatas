@@ -31,7 +31,10 @@ fun main() {
 
 // Time Complexity: O(n^2)
 // Space complexity: O(n)
-fun approach1(n: Int, k: Int): Int {
+fun approach1(
+    n: Int,
+    k: Int
+): Int {
     val arr = (1..n).toMutableList()
 
     fun helper(arr1: MutableList<Int>, startIndex: Int): Int {
@@ -49,7 +52,10 @@ fun approach1(n: Int, k: Int): Int {
 // using solution to sub-problem to solve original problem
 // Time Complexity: O(n)
 // Space complexity: O(n)
-fun approach2(n: Int, k: Int): Int {
+fun approach2(
+    n: Int,
+    k: Int
+): Int {
     fun josephus(n1: Int): Int {
         if (n1 == 1)
             return 0
@@ -62,7 +68,10 @@ fun approach2(n: Int, k: Int): Int {
 // improve space complexity of recursive call stack
 // Time Complexity: O(n)
 // Space complexity: O(1)
-fun approach3(n: Int, k: Int): Int {
+fun approach3(
+    n: Int,
+    k: Int
+): Int {
     var survivor = 0
     for (i in 2..n)
         survivor = (survivor + k) % i

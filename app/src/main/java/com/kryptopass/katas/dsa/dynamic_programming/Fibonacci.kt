@@ -30,7 +30,9 @@ fun main() {
 // Space Complexity: O(n)
 //   recursive call stack will take order of n
 //   max depth of the call stack is n
-fun fibRecursive(n: Int): Int {
+fun fibRecursive(
+    n: Int
+): Int {
     if (n < 2)
         return n
 
@@ -45,7 +47,9 @@ var memo = HashMap<Int, Int>().apply {
 // Step 2: memoization/top-down approach
 // Time Complexity: O(n), n operations, retrieve every next value from hash/dict
 // Space Complexity: O(n), hash table stores order of n, recursion call stack is order of n
-fun fibMemo(n: Int): Int {
+fun fibMemo(
+    n: Int
+): Int {
     if (n in memo)
         return memo[n]!!
 
@@ -56,7 +60,9 @@ fun fibMemo(n: Int): Int {
 // Step 3: tabulation/bottom-up approach
 // Time Complexity: O(n), n operations
 // Space Complexity: O(n), 1d table array of size n
-fun fibTab(n: Int): Int {
+fun fibTab(
+    n: Int
+): Int {
     val tab1d = IntArray(n + 1)
 
     if (n > 0)
@@ -74,7 +80,9 @@ fun fibTab(n: Int): Int {
 // Step 4: space optimized tabulation
 // Time Complexity: O(n), n operations
 // Space Complexity: O(1), only 2 variables
-fun fibSpaceOptimized(n: Int): Int {
+fun fibSpaceOptimized(
+    n: Int
+): Int {
     if (n < 2)
         return n
 

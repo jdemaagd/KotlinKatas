@@ -12,7 +12,10 @@ fun main() {
 
 // Time complexity: k * nCk -> O(n! / (k! * (n-k)!))
 // Space complexity: O(k) -> space on recursive call stack
-fun combination(n: Int, k: Int): List<List<Int>> {
+fun combination(
+    n: Int,
+    k: Int
+): List<List<Int>> {
     val result = mutableListOf<List<Int>>()
 
     fun backtrack(start: Int, path: MutableList<Int>) {
@@ -29,5 +32,6 @@ fun combination(n: Int, k: Int): List<List<Int>> {
     }
 
     backtrack(1, mutableListOf())
+
     return result
 }

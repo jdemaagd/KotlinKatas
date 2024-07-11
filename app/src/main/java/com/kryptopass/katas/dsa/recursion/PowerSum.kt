@@ -20,7 +20,10 @@ fun main() {
 
 // Time complexity: O(n), where n is total elements in main and sub arrays
 // Space complexity: O(d), where d is maximum depth of call stack
-fun powerSum(list: Any, power: Int = 1): Int {
+fun powerSum(
+    list: Any,
+    power: Int = 1
+): Int {
     var sum = 0
     for (i in list as Array<*>) {
         sum += if (i is Array<*>) {

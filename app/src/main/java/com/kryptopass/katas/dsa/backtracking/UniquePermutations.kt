@@ -10,7 +10,9 @@ fun main() {
 
 // Time complexity: O(n! * n)
 // Space complexity: O(n) -> maximum depth of recursion
-fun uniquePermutations(nums: IntArray): List<List<Int>> {
+fun uniquePermutations(
+    nums: IntArray
+): List<List<Int>> {
     val result = mutableListOf<List<Int>>()
 
     fun permutations(index: Int) {

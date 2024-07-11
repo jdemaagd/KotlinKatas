@@ -13,7 +13,9 @@ fun main() {
 // Time complexity -> O(n * 2^n)
 //    2^n subsets * for each subset calling function n times
 // Space complexity: O(n) -> space on recursion stack
-fun subsets(nums: IntArray): List<List<Int>> {
+fun subsets(
+    nums: IntArray
+): List<List<Int>> {
     val result = mutableListOf<List<Int>>()
 
     fun backtrack(

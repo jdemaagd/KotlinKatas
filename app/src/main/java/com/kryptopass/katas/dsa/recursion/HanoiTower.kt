@@ -26,7 +26,10 @@ fun main() {
 //        = 2 [2 * [2 * T(n - 3) + 1] + 1] + 1
 // Space Complexity: O(n) -> recursive call stack
 fun hanoiTower(
-    n: Int, src: Int, dest: Int, aux: Int
+    n: Int,
+    src: Int,
+    dest: Int,
+    aux: Int
 ): Int {
     var count = 0
 

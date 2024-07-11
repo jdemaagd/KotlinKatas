@@ -48,7 +48,9 @@ Space Complexity Analysis -> 𝑂(𝑛^2)
     we take the dominant term which is n^2 over n
 NOTE: space used just to return output is not counted as auxiliary space and not counted in space complexity
  */
-fun solveNQueens(n: Int): List<List<String>> {
+fun solveNQueens(
+    n: Int
+): List<List<String>> {
     val res = mutableListOf<List<String>>()
     // NOTE: board is edited in place
     val board = Array(n) { CharArray(n) { '.' } }

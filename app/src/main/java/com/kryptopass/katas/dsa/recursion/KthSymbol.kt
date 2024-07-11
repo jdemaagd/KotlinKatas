@@ -21,7 +21,10 @@ fun main() {
 // 0 1 1 0 1 0 0 1
 // Time complexity: O(n)
 // Space complexity: O(n)
-fun kthSymbol(n: Int, k: Int): Int {
+fun kthSymbol(
+    n: Int,
+    k: Int
+): Int {
     if (n == 1)
         return 0
 

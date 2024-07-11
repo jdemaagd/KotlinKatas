@@ -12,7 +12,8 @@ fun main() {
 }
 
 fun combinationSum(
-    candidates: IntArray, target: Int
+    candidates: IntArray,
+    target: Int
 ): List<List<Int>> {
     val result = mutableListOf<List<Int>>()
     val n = candidates.size
@@ -33,5 +34,6 @@ fun combinationSum(
     }
 
     backtrack(0, mutableListOf(), 0)
+
     return result
 }

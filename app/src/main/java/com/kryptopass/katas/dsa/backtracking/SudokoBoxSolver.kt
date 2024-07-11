@@ -19,12 +19,17 @@ fun main() {
     }
 }
 
-fun sudokuBoxSolver(board: Array<CharArray>) {
+fun sudokuBoxSolver(
+    board: Array<CharArray>
+) {
     val boxes = Array(9) { mutableMapOf<Char, Boolean>() }
     val rows = Array(9) { mutableMapOf<Char, Boolean>() }
     val cols = Array(9) { mutableMapOf<Char, Boolean>() }
 
-    fun getBox(row: Int, col: Int): Int {
+    fun getBox(
+        row: Int,
+        col: Int
+    ): Int {
         val newCol = col / 3
         val newRow = (row / 3) * 3
         return newCol + newRow

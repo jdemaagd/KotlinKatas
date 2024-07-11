@@ -30,7 +30,8 @@ fun main() {
 // Time Complexity: O(3^(m + n)), where m and n are the lengths of the two strings
 // Space Complexity: O(m + n)
 fun minDistanceRecursive(
-    word1: String, word2: String
+    word1: String,
+    word2: String
 ): Int {
     fun numberOfOperations(nIndex: Int, mIndex: Int): Int {
         if (nIndex > word1.length - 1 && mIndex > word2.length - 1) {
@@ -61,7 +62,8 @@ fun minDistanceRecursive(
 // Time Complexity: O(m * n), where m and n are the lengths of the two strings
 // Space Complexity: O(m * n)
 fun minDistanceMemo(
-    word1: String, word2: String
+    word1: String,
+    word2: String
 ): Int {
     val n = word1.length
     val m = word2.length
@@ -103,7 +105,8 @@ fun minDistanceMemo(
 // Time Complexity: O(m * n), where m and n are the lengths of the two strings
 // Space Complexity: O(m * n)
 fun minDistanceTab(
-    word1: String, word2: String
+    word1: String,
+    word2: String
 ): Int {
     val n = word1.length
     val m = word2.length
@@ -137,7 +140,8 @@ fun minDistanceTab(
 // Time Complexity: O(m * n), where m and n are the lengths of the two strings
 // Space Complexity: O(m)
 fun minDistanceSpaceOptimized(
-    word1: String, word2: String
+    word1: String,
+    word2: String
 ): Int {
     val n = word1.length
     val m = word2.length

@@ -23,7 +23,9 @@ fun main() {
 // Step 1: recursive solution
 // Time Complexity: O(2^n), each call potentially leads to 2 more calls
 // Space Complexity: O(n), recursive call stack
-fun minCostRecursive(cost: IntArray): Int {
+fun minCostRecursive(
+    cost: IntArray
+): Int {
     fun helper(index: Int): Int {
         if (index >= cost.size)
             return 0
@@ -40,7 +42,9 @@ fun minCostRecursive(cost: IntArray): Int {
 // Step 2: memoization/top-down DP approach
 // Time Complexity: O(n), compute once and store for each n (index)
 // Space Complexity: O(n), max depth recursive call stack is n
-fun minCostMemo(cost: IntArray): Int {
+fun minCostMemo(
+    cost: IntArray
+): Int {
     val n = cost.size
     val array = IntArray(n) { -1 }
 
@@ -64,7 +68,9 @@ fun minCostMemo(cost: IntArray): Int {
 // Step 3: tabulation/bottom-up DP approach
 // Time Complexity: O(n), compute once and store for each n (index)
 // Space Complexity: O(n), store n + 1 elements in array
-fun minCostTab(cost: IntArray): Int {
+fun minCostTab(
+    cost: IntArray
+): Int {
     val n = cost.size
     val array = IntArray(n + 1) { -1 }
 
@@ -83,7 +89,9 @@ fun minCostTab(cost: IntArray): Int {
 // Step 4: tabulation with space optimization
 // Time Complexity: O(n), compute once and store for each n (index)
 // Space Complexity: O(1), store only 3 elements
-fun minTabSpaceOptimized(cost: IntArray): Int {
+fun minTabSpaceOptimized(
+    cost: IntArray
+): Int {
     var prev = 0
     var curr = 0
 

@@ -13,7 +13,9 @@ fun main() {
 // Time complexity: O(n! * n)
 // Space complexity: O(n) -> maximum depth of recursion
 //   n! * n -> do not count space of answer we return
-fun permutations(nums: IntArray): List<List<Int>> {
+fun permutations(
+    nums: IntArray
+): List<List<Int>> {
     val result = mutableListOf<List<Int>>()
 
     fun helper(index: Int) {

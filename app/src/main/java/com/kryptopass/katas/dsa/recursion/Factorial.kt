@@ -14,7 +14,9 @@ fun main() {
     println()
 }
 
-fun seq(n: Int) {
+fun seq(
+    n: Int
+) {
     if (n == 0)
         return
 
@@ -24,7 +26,10 @@ fun seq(n: Int) {
 }
 
 // NOTE: 0 to n recursive approach
-fun sumInc(start: Int, end: Int): Int {
+fun sumInc(
+    start: Int,
+    end: Int
+): Int {
     if (start == end)
         return end
 
@@ -32,21 +37,27 @@ fun sumInc(start: Int, end: Int): Int {
 }
 
 // NOTE: n to 0 recursive approach
-fun sumDec(end: Int): Int {
+fun sumDec(
+    end: Int
+): Int {
     if (end == 0)
         return 0
 
     return end + sumDec(end - 1)
 }
 
-fun factorial(n: Int): Int {
+fun factorial(
+    n: Int
+): Int {
     if (n == 0)
         return 1
 
     return n * factorial(n - 1)
 }
 
-fun fibonacci(n: Int): Int {
+fun fibonacci(
+    n: Int
+): Int {
     if (n < 2)
         return n
 

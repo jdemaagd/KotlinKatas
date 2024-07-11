@@ -17,23 +17,53 @@ choices: recursion (include/exclude)
 optimal solution: maximize value that can be added to knapsack
  */
 fun main() {
-    knapsackRecursive(50, intArrayOf(10, 20, 30), intArrayOf(60, 100, 120), 3).also { println(it) }  // 220
+    knapsackRecursive(
+        50,
+        intArrayOf(10, 20, 30),
+        intArrayOf(60, 100, 120),
+        3
+    ).also { println(it) }  // 220
     knapsackRecursive(8, intArrayOf(8, 2, 5), intArrayOf(2, 3, 9), 3).also { println(it) }  // 12
     println()
-    knapsackMemo(50, intArrayOf(10, 20, 30), intArrayOf(60, 100, 120), 3).also { println(it) }  // 220
+    knapsackMemo(
+        50,
+        intArrayOf(10, 20, 30),
+        intArrayOf(60, 100, 120),
+        3
+    ).also { println(it) }  // 220
     knapsackMemo(8, intArrayOf(8, 2, 5), intArrayOf(2, 3, 9), 3).also { println(it) }  // 12
     println()
-    knapsackTab(50, intArrayOf(10, 20, 30), intArrayOf(60, 100, 120), 3).also { println(it) }  // 220
+    knapsackTab(
+        50,
+        intArrayOf(10, 20, 30),
+        intArrayOf(60, 100, 120),
+        3
+    ).also { println(it) }  // 220
     knapsackTab(8, intArrayOf(8, 2, 5), intArrayOf(2, 3, 9), 3).also { println(it) }  // 12
     println()
-    knapsackTabSpaceOptimized(50, intArrayOf(10, 20, 30), intArrayOf(60, 100, 120), 3).also { println(it) }  // 220
-    knapsackTabSpaceOptimized(8, intArrayOf(8, 2, 5), intArrayOf(2, 3, 9), 3).also { println(it) }  // 12
+    knapsackTabSpaceOptimized(
+        50,
+        intArrayOf(10, 20, 30),
+        intArrayOf(60, 100, 120),
+        3
+    ).also { println(it) }  // 220
+    knapsackTabSpaceOptimized(
+        8,
+        intArrayOf(8, 2, 5),
+        intArrayOf(2, 3, 9),
+        3
+    ).also { println(it) }  // 12
 }
 
 // Step 1: recursive solution
 // Time Complexity: O(2^n), each item has 2 choices (include or exclude) n times
 // Space Complexity: O(n), recursive call stack space
-fun knapsackRecursive(W: Int, wt: IntArray, `val`: IntArray, n: Int): Int {
+fun knapsackRecursive(
+    W: Int,
+    wt: IntArray,
+    `val`: IntArray,
+    n: Int
+): Int {
     fun helper(index: Int, remWeight: Int): Int {
         if (index > n - 1 || remWeight == 0) {
             return 0
@@ -54,7 +84,12 @@ fun knapsackRecursive(W: Int, wt: IntArray, `val`: IntArray, n: Int): Int {
 // Step 2: memoization/top-down DP approach
 // Time Complexity: O(n * W), n items and W weight, max upper bound
 // Space Complexity: O(n * W), memoization table
-fun knapsackMemo(W: Int, wt: IntArray, `val`: IntArray, n: Int): Int {
+fun knapsackMemo(
+    W: Int,
+    wt: IntArray,
+    `val`: IntArray,
+    n: Int
+): Int {
     val mem2d = Array(n) { IntArray(W + 1) { -1 } }
 
     fun helper(index: Int, remWeight: Int): Int {
@@ -83,7 +118,12 @@ fun knapsackMemo(W: Int, wt: IntArray, `val`: IntArray, n: Int): Int {
 // Step 3: tabulation/bottom-up DP approach
 // Time Complexity: O(n * W), n items and W weight
 // Space Complexity: O(n * W), tabulation table
-fun knapsackTab(W: Int, wt: IntArray, `val`: IntArray, n: Int): Int {
+fun knapsackTab(
+    W: Int,
+    wt: IntArray,
+    `val`: IntArray,
+    n: Int
+): Int {
     val tab2d = Array(n + 1) { IntArray(W + 1) }
 
     for (i in 1..n) {
@@ -103,7 +143,12 @@ fun knapsackTab(W: Int, wt: IntArray, `val`: IntArray, n: Int): Int {
 // Step 4: space-optimized tabulation
 // Time Complexity: O(n * W), n items and W weight
 // Space Complexity: O(W), tabulation table
-fun knapsackTabSpaceOptimized(W: Int, wt: IntArray, `val`: IntArray, n: Int): Int {
+fun knapsackTabSpaceOptimized(
+    W: Int,
+    wt: IntArray,
+    `val`: IntArray,
+    n: Int
+): Int {
     val prev = IntArray(W + 1)
     val curr = IntArray(W + 1)
 

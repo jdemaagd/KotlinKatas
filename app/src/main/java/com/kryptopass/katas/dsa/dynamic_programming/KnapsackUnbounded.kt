@@ -9,13 +9,28 @@ Return the maximum profit.
 Note: Each item can be taken `any number of times`.
  */
 fun main() {
-    unboundedKnapsackTab(3, intArrayOf(8, 2, 5), intArrayOf(2, 4, 9), 8).also { println(it) }       // 16
-    unboundedKnapsackTab2(3, intArrayOf(8, 2, 5), intArrayOf(2, 4, 9), 8).also { println(it) }     // 16
+    unboundedKnapsackTab(
+        3,
+        intArrayOf(8, 2, 5),
+        intArrayOf(2, 4, 9),
+        8
+    ).also { println(it) }       // 16
+    unboundedKnapsackTab2(
+        3,
+        intArrayOf(8, 2, 5),
+        intArrayOf(2, 4, 9),
+        8
+    ).also { println(it) }     // 16
 }
 
 // Time Complexity: O(n * W), n * W recursive calls
 // Space Complexity: O(n * W), depth of recursion stack
-fun unboundedKnapsackTab(N: Int, wt: IntArray, `val`: IntArray, W: Int): Int {
+fun unboundedKnapsackTab(
+    N: Int,
+    wt: IntArray,
+    `val`: IntArray,
+    W: Int
+): Int {
     val tab2d = Array(N + 1) { IntArray(W + 1) }
 
     for (i in 1..N) {
@@ -34,7 +49,12 @@ fun unboundedKnapsackTab(N: Int, wt: IntArray, `val`: IntArray, W: Int): Int {
 
 // Time Complexity: O(n * W), n * W cells in tabulation
 // Space Complexity: O(W)
-fun unboundedKnapsackTab2(N: Int, wt: IntArray, `val`: IntArray, W: Int): Int {
+fun unboundedKnapsackTab2(
+    N: Int,
+    wt: IntArray,
+    `val`: IntArray,
+    W: Int
+): Int {
     val tab2d = Array(N + 1) { IntArray(W + 1) { -1 } }
 
     for (j in 0..W) {

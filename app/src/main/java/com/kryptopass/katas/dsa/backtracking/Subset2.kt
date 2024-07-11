@@ -12,7 +12,9 @@ fun main() {
 
 // Time complexity -> O(n * 2^n)
 // Space complexity -> O(n) -> space on recursion stack
-fun subsetsWithDuplicates(nums: IntArray): List<List<Int>> {
+fun subsetsWithDuplicates(
+    nums: IntArray
+): List<List<Int>> {
     val result = mutableListOf<List<Int>>()
     nums.sort()
 

@@ -15,7 +15,10 @@ fun main() {
     findTarget(intArrayOf(1, 2, 3, 4, 5), 10).also(::println) // 0
 }
 
-fun findTarget(nums: IntArray, target: Int): Int {
+fun findTarget(
+    nums: IntArray,
+    target: Int
+): Int {
     val n = nums.size
     val summation = nums.sum()
     val dp = Array(n) { IntArray(2 * summation + 1) }
@@ -35,5 +38,4 @@ fun findTarget(nums: IntArray, target: Int): Int {
     }
 
     return helper(n - 1, 0)
-
 }

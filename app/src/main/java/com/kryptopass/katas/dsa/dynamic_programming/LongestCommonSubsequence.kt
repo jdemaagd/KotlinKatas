@@ -30,7 +30,8 @@ fun main() {
 // Time Complexity: O(2^(n + m)) -> 2 * 2 * 2 * ... (n + m) times
 // Space Complexity: O(n + m)
 fun longestCommonSubsequenceRecursive(
-    text1: String, text2: String
+    text1: String,
+    text2: String
 ): Int {
     val n = text1.length
     val m = text2.length
@@ -54,7 +55,8 @@ fun longestCommonSubsequenceRecursive(
 // Time Complexity: O(n * m) -> n * m subproblems
 // Space Complexity: O(n * m) + O(n + m), memo table + recursion stack, -> O(n * m)
 fun longestCommonSubsequenceMemo(
-    text1: String, text2: String
+    text1: String,
+    text2: String
 ): Int {
     val n = text1.length
     val m = text2.length
@@ -85,7 +87,8 @@ fun longestCommonSubsequenceMemo(
 // Time Complexity: O(n * m) -> n * m subproblems
 // Space Complexity: O(n * m) -> memo table
 fun longestCommonSubsequenceTab(
-    text1: String, text2: String
+    text1: String,
+    text2: String
 ): Int {
     val n = text1.length
     val m = text2.length
@@ -108,7 +111,8 @@ fun longestCommonSubsequenceTab(
 // Time Complexity: O(n * m) -> n * m subproblems
 // Space Complexity: O(m) -> memo table
 fun longestCommonSubsequenceSpaceOptimized(
-    text1: String, text2: String
+    text1: String,
+    text2: String
 ): Int {
     val n = text1.length
     val m = text2.length

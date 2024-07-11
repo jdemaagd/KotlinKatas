@@ -22,7 +22,9 @@ fun main() {
 // Step 1: recursive solution
 // Time Complexity: O(3^n)
 // Space Complexity: O(n)
-fun tribRecursive(n: Int): Int {
+fun tribRecursive(
+    n: Int
+): Int {
     if (n == 0)
         return 0
 
@@ -35,7 +37,9 @@ fun tribRecursive(n: Int): Int {
 // Step 2: memoization/top-down DP approach
 // Time Complexity: O(n)
 // Space Complexity: O(n)
-fun tribMemo(n: Int): Int {
+fun tribMemo(
+    n: Int
+): Int {
     val memo = IntArray(n + 1) { -1 }
 
     fun helper(n2: Int): Int {
@@ -59,7 +63,9 @@ fun tribMemo(n: Int): Int {
 // Step 3: tabulation/bottom-up DP approach
 // Time Complexity: O(n)
 // Space Complexity: O(n)
-fun tribTab(n: Int): Int {
+fun tribTab(
+    n: Int
+): Int {
     if (n == 0)
         return 0
 
@@ -77,7 +83,9 @@ fun tribTab(n: Int): Int {
     return dp[n]
 }
 
-fun tribTabSpaceOptimized(n: Int): Int {
+fun tribTabSpaceOptimized(
+    n: Int
+): Int {
     var zero = 0
     var one = 1
     var two = 1

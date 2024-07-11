@@ -10,7 +10,9 @@ fun main() {
     canPartition(intArrayOf(1, 2, 3, 4, 5, 6, 7)).also(::println)      // true
 }
 
-fun canPartition(nums: IntArray): Boolean {
+fun canPartition(
+    nums: IntArray
+): Boolean {
     val n = nums.size
     var sumTotal = 0
 

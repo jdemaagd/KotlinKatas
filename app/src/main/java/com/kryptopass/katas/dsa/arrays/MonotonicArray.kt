@@ -17,7 +17,9 @@ fun main() {
 
 // Time complexity: O(n)
 // Space complexity: O(1)
-fun monotonicArray(arr: IntArray): Boolean {
+fun monotonicArray(
+    arr: IntArray
+): Boolean {
     val n = arr.size
     if (n == 0 || n == 1)
         return true
