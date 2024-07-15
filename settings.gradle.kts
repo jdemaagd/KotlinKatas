@@ -23,4 +23,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Kotlin Katas"
 include(":app")
- 
+include(":hack")

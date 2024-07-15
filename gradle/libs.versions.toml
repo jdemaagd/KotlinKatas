@@ -1,15 +1,17 @@
 [versions]
 activityCompose = "1.9.0"
-agp = "8.5.0"
+agp = "8.5.1"
 arrowCore = "1.2.3"
 composeBom = "2024.06.00"
 coreKtx = "1.13.1"
+coroutines = "1.8.1"
 espressoCore = "3.6.1"
 junit = "4.13.2"
 junitVersion = "1.2.1"
 kotlin = "2.0.0"
 kspCompiler = "2.0.0-1.0.21"
-lifecycle = "2.8.2"
+lifecycle = "2.8.3"
+mockito = "5.2.1"
 
 [libraries]
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
@@ -28,9 +30,13 @@ androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-toolin
 arrow-core = { module = "io.arrow-kt:arrow-core", version.ref = "arrowCore" }
 arrow-optics = { module = "io.arrow-kt:arrow-optics", version.ref = "arrowCore" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
+kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
+kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
+mockito-kotlin = { module = "org.mockito.kotlin:mockito-kotlin", version.ref = "mockito" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 devtoolsKsp = { id = "com.google.devtools.ksp", version.ref = "kspCompiler" }
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
