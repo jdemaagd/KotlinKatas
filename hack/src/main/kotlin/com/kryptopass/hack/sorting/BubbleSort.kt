@@ -76,5 +76,36 @@ The array is not sorted, and its initial values are: {3, 2, 1}. The following 3 
 At this point the array is sorted and the three lines are printed.
  */
 fun main() {
+    countSwaps(arrayOf(3, 2, 1))
+    println()
+    countSwaps(arrayOf(1, 2, 3))
+    println()
+    countSwaps(arrayOf(6, 4, 1))
+}
 
+// Time Complexity: O(n^2), where n is the number of elements in the array
+//   outer loop runs n times, inner loop runs n - 1 times,
+//   n * (n - 1) = n^2 - n -> O(n^2)
+// Space Complexity: O(1), array is sorted in place
+//   determined by amount of extra space it uses beyond input array
+//   algorithm uses a few extra variables (`n`, `swap`, `i`, `j`),
+//   this space does not depend on size of input array and is therefore considered constant
+fun countSwaps(
+    arr: Array<Int>
+) {
+    val n = arr.size
+    var swap = 0
+
+    for (i in 0 until n) {
+        for (j in 0 until n - 1) {
+            if (arr[j] > arr[j + 1]) {
+                arr[j] = arr[j + 1].also { arr[j + 1] = arr[j] }
+                swap++
+            }
+        }
+    }
+
+    println("Array is sorted in $swap swaps.")
+    println("First Element: ${arr.first()}")
+    println("Last Element: ${arr.last()}")
 }

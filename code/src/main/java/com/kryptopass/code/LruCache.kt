@@ -10,35 +10,44 @@ Implement the LRUCache class:
 If the number of keys exceeds the capacity from this operation, evict the least recently used key.
  */
 fun main() {
-    val lruCache = LRUCacheUtil(3)
-    lruCache.put(1, 1)
-    lruCache.put(2, 2)
-    lruCache.put(3, 3)
-    lruCache.get(1).also { println(it) }    // 1
-    lruCache.get(2).also { println(it) }    // 2
-    lruCache.get(3).also { println(it) }    // 3
+    val cache = LRUCache<Int, Int>(3)
 
-    lruCache.put(4, 4)
-    lruCache.get(1).also { println(it) }    // -1
-    lruCache.get(4).also { println(it) }    // 4
+    cache.put(1, 1)
+    cache.put(2, 2)
+    cache.put(3, 3)
+    cache.get(1).also { println(it) }    // 1
+    cache.get(2).also { println(it) }    // 2
+    cache.get(3).also { println(it) }    // 3
 
-    lruCache.put(5, 5)
-    lruCache.get(2).also { println(it) }    // -1
-    lruCache.get(3).also { println(it) }    // 3
-    lruCache.get(4).also { println(it) }    // 4
-    lruCache.get(5).also { println(it) }    // 5
+    cache.put(4, 4)
+    cache.get(1).also { println(it) }    // null
+    cache.get(4).also { println(it) }    // 4
+
+    cache.put(5, 5)
+    cache.get(2).also { println(it) }    // null
+    cache.get(3).also { println(it) }    // 3
+    cache.get(4).also { println(it) }    // 4
+    cache.get(5).also { println(it) }    // 5
 }
 
-class LRUCacheUtil(private val capacity: Int) {
-    private val map = LinkedHashMap<Int, Int>(capacity, 0.75f, true)
+class LRUCache<K, V>(private val capacity: Int) {
 
-    fun get(key: Int): Int = map[key] ?: -1
+    // capacity: number of buckets to start with
+    // 0.75f: resizes when it is 75% full
+    // true: access order (helps with LRU Cache), when entry is accessed, moved to end of list
+    // false: insertion order
+    private val cache = object : LinkedHashMap<K, V>(capacity, 0.75f, true) {
+        override fun removeEldestEntry(eldest: MutableMap.MutableEntry<K, V>?): Boolean =
+            size > capacity
+    }
 
-    fun put(key: Int, value: Int) {
-        if (map.size == capacity && !map.containsKey(key)) {
-            val eldestKey = map.entries.iterator().next().key
-            map.remove(eldestKey)
-        }
-        map[key] = value
+    // Time Complexity -> O(1), lookup by key
+    // Space Complexity -> O(1), capacity
+    fun get(key: K): V? = cache[key]
+
+    // Time Complexity -> O(1), lookup by key
+    // Space Complexity -> O(1), capacity
+    fun put(key: K, value: V) {
+        cache[key] = value
     }
 }
