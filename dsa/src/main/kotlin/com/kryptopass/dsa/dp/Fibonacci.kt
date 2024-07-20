@@ -1,4 +1,4 @@
-package com.kryptopass.dsa.dynamic_programming
+package com.kryptopass.dsa.dp
 
 /*
 In Fibonacci sequence, each subsequent term is obtained by adding the preceding 2 terms

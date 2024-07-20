@@ -1,4 +1,4 @@
-package com.kryptopass.hack.linked_lists
+package com.kryptopass.hack.list
 
 import java.util.Scanner
 

@@ -1,4 +1,4 @@
-package com.kryptopass.dsa.dynamic_programming
+package com.kryptopass.dsa.dp
 
 /*
 The Tribonacci sequence Tn is defined as follows:

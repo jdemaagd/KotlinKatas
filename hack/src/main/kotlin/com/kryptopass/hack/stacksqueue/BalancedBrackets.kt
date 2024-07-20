@@ -1,4 +1,4 @@
-package com.kryptopass.hack.stacks_queues
+package com.kryptopass.hack.stacksqueue
 
 /*
 A bracket is considered to be any one of the following characters: `(`, `)`, `{`, `}`, `[`, or `]`.

@@ -1,4 +1,4 @@
-package com.kryptopass.dsa.dynamic_programming
+package com.kryptopass.dsa.dp
 
 /*
 Given two strings text1 and text2, return the length of their longest common subsequence.

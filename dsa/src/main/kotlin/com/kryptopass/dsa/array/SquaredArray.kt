@@ -1,4 +1,4 @@
-package com.kryptopass.dsa.arrays
+package com.kryptopass.dsa.array
 
 /*
 You are given an array of Integers in which each subsequent value is not less than the previous

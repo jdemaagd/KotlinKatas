@@ -1,4 +1,4 @@
-package com.kryptopass.hack.dynamic_programming
+package com.kryptopass.hack.dp
 
 /*
 Given an array of integers, find the subset of non-adjacent elements with the maximum sum.

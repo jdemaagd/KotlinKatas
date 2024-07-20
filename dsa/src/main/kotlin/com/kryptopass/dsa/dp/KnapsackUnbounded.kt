@@ -1,4 +1,4 @@
-package com.kryptopass.dsa.dynamic_programming
+package com.kryptopass.dsa.dp
 
 /*
 Given a set of N items, each with a weight and a value,

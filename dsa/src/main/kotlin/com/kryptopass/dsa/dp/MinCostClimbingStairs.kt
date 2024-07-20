@@ -1,4 +1,4 @@
-package com.kryptopass.dsa.dynamic_programming
+package com.kryptopass.dsa.dp
 
 /*
 You are given an integer array cost where `cost[i]` is the cost of `ith` step on a staircase.

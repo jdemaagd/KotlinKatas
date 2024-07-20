@@ -1,4 +1,4 @@
-package com.kryptopass.dsa.dynamic_programming
+package com.kryptopass.dsa.dp
 
 /*
 Given an integer array `nums`, return `true` if you can partition the array into two subsets

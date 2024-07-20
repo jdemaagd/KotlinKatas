@@ -1,4 +1,4 @@
-package com.kryptopass.hack.graphs
+package com.kryptopass.hack.graph
 
 import java.util.LinkedList
 import java.util.Queue

@@ -1,4 +1,4 @@
-package com.kryptopass.dsa.arrays
+package com.kryptopass.dsa.array
 
 /*
 An array is monotonic if it is either monotone increasing or monotone decreasing.
@@ -7,12 +7,12 @@ An array is monotone decreasing if all its elements from left to right are non-i
 Given an integer array return true if the given array is monotonic, or false otherwise.
  */
 fun main() {
-    com.kryptopass.dsa.arrays.monotonicArray(intArrayOf(1, 2, 2, 3)).also { println(it) }     // true
-    com.kryptopass.dsa.arrays.monotonicArray(intArrayOf(6, 5, 4, 4)).also { println(it) }     // true
-    com.kryptopass.dsa.arrays.monotonicArray(intArrayOf(1, 3, 2)).also { println(it) }        // false
-    com.kryptopass.dsa.arrays.monotonicArray(intArrayOf()).also { println(it) }               // true
-    com.kryptopass.dsa.arrays.monotonicArray(intArrayOf(11)).also { println(it) }             // true
-    com.kryptopass.dsa.arrays.monotonicArray(intArrayOf(1, 1, 1, 1)).also { println(it) }     // true
+    com.kryptopass.dsa.array.monotonicArray(intArrayOf(1, 2, 2, 3)).also { println(it) }     // true
+    com.kryptopass.dsa.array.monotonicArray(intArrayOf(6, 5, 4, 4)).also { println(it) }     // true
+    com.kryptopass.dsa.array.monotonicArray(intArrayOf(1, 3, 2)).also { println(it) }        // false
+    com.kryptopass.dsa.array.monotonicArray(intArrayOf()).also { println(it) }               // true
+    com.kryptopass.dsa.array.monotonicArray(intArrayOf(11)).also { println(it) }             // true
+    com.kryptopass.dsa.array.monotonicArray(intArrayOf(1, 1, 1, 1)).also { println(it) }     // true
 }
 
 // Time complexity: O(n)

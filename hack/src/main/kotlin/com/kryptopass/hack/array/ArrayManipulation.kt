@@ -72,13 +72,12 @@ fun main() {
     ).also { println(it) }
 }
 
-// Time Complexity: O(n + m), where m is the size of the queries array and n is initialized array size
+// Time Complexity: O(n + m), where m is size of queries array and n is initialized array size
 // Space Complexity: O(n), where n is the initialized array size
 fun arrayManipulation(
     n: Int,
     queries: Array<Array<Int>>
 ): Long {
-    // Write your code here
     val arr = LongArray(n + 1)
 
     for (query in queries) {

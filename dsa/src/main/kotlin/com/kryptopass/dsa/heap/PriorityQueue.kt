@@ -1,4 +1,4 @@
-package com.kryptopass.dsa.heaps
+package com.kryptopass.dsa.heap
 
 /*
 Priority Queue Construction
