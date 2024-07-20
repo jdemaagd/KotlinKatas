@@ -87,17 +87,17 @@ NOT `bitwise complement` inverts all bits of its operand
  */
 fun main() {
     val numbers = arrayOf(2147483647, 1, 0)
-    for(i in 0 until 3) {
+    for (i in 0 until 3) {
         flippingBits(numbers[i]).also(::println)
     }
     println()
     val numbers1 = arrayOf(4, 123456)
-    for(i in 0 until 2) {
+    for (i in 0 until 2) {
         flippingBits(numbers1[i]).also(::println)
     }
     println()
     val numbers2 = arrayOf(0, 802743475, 35601423)
-    for(i in 0 until 3) {
+    for (i in 0 until 3) {
         flippingBits(numbers2[i]).also(::println)
     }
 
@@ -112,7 +112,9 @@ fun main() {
 
 // Time Complexity: O(1)
 // Space Complexity: O(1)
-fun flippingBits(n: Int): Long {
+fun flippingBits(
+    n: Int
+): Long {
     // performs a bitwise XOR operation between `n.toLong()` and `0xFFFFFFFFL`
     return n.toLong() xor 0xFFFFFFFFL
 }
@@ -120,10 +122,14 @@ fun flippingBits(n: Int): Long {
 // `inv()` function performs a bitwise NOT operation on `Long`
 // `and 0xFFFFFFFFL` ensures that result is within 32 bits by applying a bitwise AND
 // with 0xFFFFFFFFL (a 32-bit mask with all bits set to 1)
-fun flippingBits2(n: Int): Long {
+fun flippingBits2(
+    n: Int
+): Long {
     return n.toLong().inv() and 0xFFFFFFFFL
 }
 
-fun processQueries(queries: List<Int>): List<Long> {
+fun processQueries(
+    queries: List<Int>
+): List<Long> {
     return queries.map { flippingBits2(it) }
 }
