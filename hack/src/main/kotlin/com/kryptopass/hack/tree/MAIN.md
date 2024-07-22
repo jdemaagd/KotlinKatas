@@ -35,7 +35,24 @@ fun main(args: Array<String>) {
 }
 ```
 
-## main for 
+## main for CheckBST
+
+```kotlin
+fun main(args: Array<String>) {
+    val arr = readln().trim().split(" ").map { it.toInt() }.toIntArray()
+    
+    val bst = BinaryTree()
+    for (i in 0 until arr.size - 1) {
+        bst.insert(arr[i])
+    }
+    
+    if (checkBST(bst.root)) {
+        println("Yes")
+    } else {
+        println("No")
+    }
+}
+```
 
 ## main for BalancedForest
 

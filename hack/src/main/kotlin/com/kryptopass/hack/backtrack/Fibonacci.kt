@@ -51,12 +51,8 @@ The Fibonacci sequence begins as follows:
     In the sequence above, `fibonacci(3)` is `2`.
  */
 fun main() {
-    fibRecursive(0).also(::println)
-    fibRecursive(1).also(::println)
-    fibRecursive(2).also(::println)
-    fibRecursive(3).also(::println)
-    fibMemo(4).also(::println)
-    fibMemo(5).also(::println)
+    val n = readln().trim().toInt()
+    fibMemo(n).also(::println)
 }
 
 // Time Complexity: O(2^n), makes 2 recursive calls

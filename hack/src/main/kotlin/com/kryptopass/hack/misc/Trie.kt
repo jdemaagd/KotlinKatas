@@ -7,32 +7,28 @@ class TrieNode {
 class Trie {
     private val root = TrieNode()
 
-    // Time Complexity: O(n * 32), where n is size of array
-    // each number takes O(32) time to insert
-    fun insert(num: Int) {
-        var node = root
+    fun insert(number: Int) {
+        var current = root
         for (i in 31 downTo 0) {
-            val bit = (num shr i) and 1
-            if (node.children[bit] == null) {
-                node.children[bit] = TrieNode()
+            val bit = (number shr i) and 1
+            if (current.children[bit] == null) {
+                current.children[bit] = TrieNode()
             }
-            node = node.children[bit]!!
+            current = current.children[bit]!!
         }
     }
 
-    // Time Complexity: O(m * 32), where m is the number of queries
-    // each query takes O(32) time to find maximum XOR
-    fun getMaxXor(num: Int): Int {
-        var node = root
+    fun getMaxXor(number: Int): Int {
+        var current = root
         var maxXor = 0
         for (i in 31 downTo 0) {
-            val bit = (num shr i) and 1
+            val bit = (number shr i) and 1
             val oppositeBit = bit xor 1
-            if (node.children[oppositeBit] != null) {
+            if (current.children[oppositeBit] != null) {
                 maxXor = maxXor or (1 shl i)
-                node = node.children[oppositeBit]!!
+                current = current.children[oppositeBit]!!
             } else {
-                node = node.children[bit]!!
+                current = current.children[bit]!!
             }
         }
         return maxXor

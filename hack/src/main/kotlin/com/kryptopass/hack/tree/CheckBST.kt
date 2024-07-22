@@ -46,37 +46,36 @@ fun main() {
     root.left?.left = Node(1)
     root.right?.right = Node(6)
     root.right?.left = Node(5)
-    println(checkBST(root))
-//    if (checkBST(root)) {
-//        println("Yes")
-//    } else {
-//        println("No")
-//    }
+    if (checkBST(root)) {
+        println("Yes")
+    } else {
+        println("No")
+    }
 
-//    val root2 = Node(3)
-//    root2.left = Node(2)
-//    root2.right = Node(5)
-//    root2.left?.left = Node(1)
-//    root2.right?.left = Node(6)
-//    root2.right?.right = Node(1)
-//    if (checkBST(root2)) {
-//        println("Yes")
-//    } else {
-//        println("No")
-//    }
-//
-//    val root3 = Node(4)
-//    root3.left = Node(2)
-//    root3.right = Node(6)
-//    root3.left?.left = Node(1)
-//    root3.left?.right = Node(3)
-//    root3.right?.left = Node(5)
-//    root3.right?.right = Node(7)
-//    if (checkBST(root3)) {
-//        println("Yes")
-//    } else {
-//        println("No")
-//    }
+    val root2 = Node(3)
+    root2.left = Node(2)
+    root2.right = Node(5)
+    root2.left?.left = Node(1)
+    root2.right?.left = Node(6)
+    root2.right?.right = Node(1)
+    if (checkBST(root2)) {
+        println("Yes")
+    } else {
+        println("No")
+    }
+
+    val root3 = Node(4)
+    root3.left = Node(2)
+    root3.right = Node(6)
+    root3.left?.left = Node(1)
+    root3.left?.right = Node(3)
+    root3.right?.left = Node(5)
+    root3.right?.right = Node(7)
+    if (checkBST(root3)) {
+        println("Yes")
+    } else {
+        println("No")
+    }
 
     // 1 2 4 3 5 6 7
 }

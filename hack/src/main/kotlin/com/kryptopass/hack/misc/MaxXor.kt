@@ -129,6 +129,5 @@ fun maxXor(
 ): Array<Int> {
     val trie = Trie()
     arr.forEach { trie.insert(it) }
-
-    return Array(queries.size) { trie.getMaxXor(queries[it]) }
+    return queries.map { query -> trie.getMaxXor(query) }.toTypedArray()
 }
