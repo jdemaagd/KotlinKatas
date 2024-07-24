@@ -14,13 +14,13 @@ Write 4 instance methods for a Binary Search Tree class to traverse BST:
  */
 fun main() {
     val bst = BstTraversal()
-    bst.root = Node(10)
-    bst.root!!.left = Node(5)
-    bst.root!!.right = Node(15)
-    bst.root!!.left!!.left = Node(2)
-    bst.root!!.left!!.right = Node(7)
-    bst.root!!.right!!.left = Node(12)
-    bst.root!!.right!!.right = Node(20)
+    bst.root = TreeNode(10)
+    bst.root!!.left = TreeNode(5)
+    bst.root!!.right = TreeNode(15)
+    bst.root!!.left!!.left = TreeNode(2)
+    bst.root!!.left!!.right = TreeNode(7)
+    bst.root!!.right!!.left = TreeNode(12)
+    bst.root!!.right!!.right = TreeNode(20)
 
     println("Breadth-First Search: ${bst.breadthFirst()}")  // [10, 5, 15, 2, 7, 12, 20]
     println("DFS In-Order: ${bst.dfsInOrder()}")            // [2, 5, 7, 10, 12, 15, 20]
@@ -29,11 +29,11 @@ fun main() {
 }
 
 class BstTraversal {
-    var root: Node? = null
+    var root: TreeNode? = null
 
     fun breadthFirst(): List<Int> {
         val result = mutableListOf<Int>()
-        val queue = mutableListOf<Node>()
+        val queue = mutableListOf<TreeNode>()
         if (root == null) {
             return result
         }
@@ -55,7 +55,7 @@ class BstTraversal {
             return result
         }
 
-        fun traverse(node: Node?) {
+        fun traverse(node: TreeNode?) {
             if (node == null) return
             node.left?.let { traverse(it) }
             result.add(node.value)
@@ -73,7 +73,7 @@ class BstTraversal {
             return result
         }
 
-        fun traverse(node: Node?) {
+        fun traverse(node: TreeNode?) {
             if (node == null) return
             result.add(node.value)
             node.left?.let { traverse(it) }
@@ -91,7 +91,7 @@ class BstTraversal {
             return result
         }
 
-        fun traverse(node: Node?) {
+        fun traverse(node: TreeNode?) {
             if (node == null) return
             node.left?.let { traverse(it) }
             node.right?.let { traverse(it) }

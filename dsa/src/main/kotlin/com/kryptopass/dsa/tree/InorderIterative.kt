@@ -18,24 +18,24 @@ Time Complexity: O(n), n is number of nodes in tree
 Space Complexity: O(n), worst case when tree is skewed
  */
 fun main() {
-    val root = Node(1)
-    root.right = Node(2)
-    root.right!!.left = Node(3)
+    val root = TreeNode(1)
+    root.right = TreeNode(2)
+    root.right!!.left = TreeNode(3)
     inorderTraversal(root).let(::println)
 
-    val root2 = Node(10)
-    root2.left = Node(5)
-    root2.right = Node(15)
-    root2.left!!.left = Node(2)
-    root2.left!!.right = Node(7)
-    root2.right!!.left = Node(12)
-    root2.right!!.right = Node(17)
+    val root2 = TreeNode(10)
+    root2.left = TreeNode(5)
+    root2.right = TreeNode(15)
+    root2.left!!.left = TreeNode(2)
+    root2.left!!.right = TreeNode(7)
+    root2.right!!.left = TreeNode(12)
+    root2.right!!.right = TreeNode(17)
     inorderTraversal(root2).let(::println)
 }
 
-fun inorderTraversal(root: Node?): List<Int> {
+fun inorderTraversal(root: TreeNode?): List<Int> {
     val result = mutableListOf<Int>()
-    val stack = mutableListOf<Node>()
+    val stack = mutableListOf<TreeNode>()
     var curr = root
 
     while (curr != null || stack.isNotEmpty()) {

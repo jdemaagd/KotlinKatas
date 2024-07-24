@@ -28,10 +28,10 @@ fun main() {
 }
 
 class BinarySearchTree {
-    var root: Node? = null
+    var root: TreeNode? = null
 
     fun insert(value: Int): BinarySearchTree {
-        val node = Node(value)
+        val node = TreeNode(value)
         if (root == null) {
             root = node
             return this
@@ -54,7 +54,7 @@ class BinarySearchTree {
         }
     }
 
-    fun find(value: Int): Node? {
+    fun find(value: Int): TreeNode? {
         var tree = root
         while (tree != null) {
             tree = when {
@@ -66,7 +66,11 @@ class BinarySearchTree {
         return null
     }
 
-    fun remove(value: Int, current: Node? = root, parent: Node? = null): Boolean {
+    fun remove(
+        value: Int,
+        current: TreeNode? = root,
+        parent: TreeNode? = null
+    ): Boolean {
         var currentNode = current
         var parentNode = parent
 
@@ -110,7 +114,7 @@ class BinarySearchTree {
         return true
     }
 
-    private fun getMin(node: Node): Int {
+    private fun getMin(node: TreeNode): Int {
         var currentNode = node
         while (currentNode.left != null) {
             currentNode = currentNode.left!!

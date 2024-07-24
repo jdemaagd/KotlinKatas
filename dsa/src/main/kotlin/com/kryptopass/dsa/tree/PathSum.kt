@@ -12,38 +12,38 @@ Time Complexity: O(n * h), where n is number of nodes and h is max height
 Space Complexity: O(h), where h is the height of the tree
  */
 fun main() {
-    val root = Node(5)
-    root.left = Node(4)
-    root.right = Node(8)
-    root.left?.left = Node(11)
-    root.left?.left?.left = Node(7)
-    root.left?.left?.right = Node(2)
-    root.right?.left = Node(13)
-    root.right?.right = Node(4)
-    root.right?.right?.left = Node(5)
-    root.right?.right?.right = Node(1)
+    val root = TreeNode(5)
+    root.left = TreeNode(4)
+    root.right = TreeNode(8)
+    root.left?.left = TreeNode(11)
+    root.left?.left?.left = TreeNode(7)
+    root.left?.left?.right = TreeNode(2)
+    root.right?.left = TreeNode(13)
+    root.right?.right = TreeNode(4)
+    root.right?.right?.left = TreeNode(5)
+    root.right?.right?.right = TreeNode(1)
     pathSum(root, 22).also(::println)
 
-    val root2 = Node(7)
-    root2.left = Node(3)
-    root2.right = Node(6)
-    root2.left?.left = Node(6)
-    root2.left?.right = Node(5)
-    root2.right?.left = Node(1)
-    root2.right?.right = Node(4)
-    root2.left?.right?.right = Node(5)
-    root2.right?.right?.left = Node(2)
-    root2.right?.right?.right = Node(3)
+    val root2 = TreeNode(7)
+    root2.left = TreeNode(3)
+    root2.right = TreeNode(6)
+    root2.left?.left = TreeNode(6)
+    root2.left?.right = TreeNode(5)
+    root2.right?.left = TreeNode(1)
+    root2.right?.right = TreeNode(4)
+    root2.left?.right?.right = TreeNode(5)
+    root2.right?.right?.left = TreeNode(2)
+    root2.right?.right?.right = TreeNode(3)
     pathSum(root2, 20).also(::println)
 }
 
 fun pathSum(
-    root: Node?,
+    root: TreeNode?,
     target: Int
 ): List<List<Int>> {
     val res = mutableListOf<List<Int>>()
 
-    fun helper(node: Node?, curr: MutableList<Int>, rem: Int) {
+    fun helper(node: TreeNode?, curr: MutableList<Int>, rem: Int) {
         if (node == null) {
             return
         }
