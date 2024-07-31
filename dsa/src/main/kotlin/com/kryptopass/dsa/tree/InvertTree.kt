@@ -22,15 +22,32 @@ Time Complexity: O(n)
 Space Complexity: O(max depth) = O(height)
  */
 fun main() {
-    val tree = insertLevelOrder(arrayOf(4, 2, 7, 1, 3, 6, 9), null, 0)
-    printTree2(invertIterative(tree))  // Output: [4, 7, 2, 9, 6, 3, 1]
-    printTree2(invertRecursive(tree))  // Output: [4, 2, 7, 1, 3, 6, 9], back to original
+    // val tree = insertLevelOrder(arrayOf(4, 2, 7, 1, 3, 6, 9), null, 0)
+    val root = VNode(4)
+    root.left = VNode(2)
+    root.right = VNode(7)
+    root.left?.left = VNode(1)
+    root.left?.right = VNode(3)
+    root.right?.left = VNode(6)
+    root.right?.right = VNode(9)
 
+    printTree2(invertIterative(root))  // Output: [4, 7, 2, 9, 6, 3, 1]
+    printTree2(invertRecursive(root))  // Output: [4, 2, 7, 1, 3, 6, 9], back to original
     println()
 
-    val tree2 = insertLevelOrder(arrayOf(1, 2, 7, 4, 5, null, 7), null, 0)
-    printTree2(invertIterative(tree2))  // Output: [1, 7, 2, 7, null, 5, 4]
-    printTree2(invertRecursive(tree2))  // Output: [1, 2, 7, 4, 5, null, 7], back to original
+    // val tree2 = insertLevelOrder(arrayOf(1, 2, 7, 4, 5, null, 7), null, 0)
+    val root2 = VNode(1)
+
+    root2.left = VNode(2)
+    root2.right = VNode(7)
+
+    root2.left?.left = VNode(4)
+    root2.left?.right = VNode(5)
+    root2.right?.left = null
+    root2.right?.right = VNode(7)
+
+    printTree2(invertIterative(root2))  // Output: [1, 7, 2, 7, null, 5, 4]
+    printTree2(invertRecursive(root2))  // Output: [1, 2, 7, 4, 5, null, 7], back to original
 }
 
 fun invertIterative(root: VNode?): VNode? {

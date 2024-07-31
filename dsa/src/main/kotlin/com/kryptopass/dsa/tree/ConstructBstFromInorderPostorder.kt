@@ -18,7 +18,6 @@ fun main() {
     val postorder2 = listOf(-1)
     val tree2 = buildTree3(inorder2, postorder2)
     printTree(tree2) // Output: [-1]
-
 }
 
 fun buildTree3(

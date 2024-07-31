@@ -31,20 +31,38 @@ Time Complexity: O(n)
 Space Complexity: O(n)
  */
 fun main() {
-//    val tree = BinaryTree()
-//    tree.insert(arrayOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11))
-//    levelOrderTraversal(tree.root).let(::println)
-//
-//    val tree2 = BinaryTree()
-//    tree2.insert(arrayOf(10, 5, 15, 2, 7, 12, 17))
-//    levelOrderTraversal(tree2.root).let(::println)
+    // val tree = BinaryTree()
+    // tree.insert(arrayOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11))
+    val root = VNode(1)
+    root.left = VNode(2)
+    root.right = VNode(3)
+    root.left?.left = VNode(4)
+    root.left?.right = VNode(5)
+    root.right?.left = VNode(6)
+    root.right?.right = VNode(7)
+    root.left?.left?.left = VNode(8)
+    root.left?.left?.right = VNode(9)
+    root.left?.right?.left = VNode(10)
+    root.left?.right?.right = VNode(11)
+    levelOrderTraversal(root).let(::println)
+
+    // val tree2 = BinaryTree()
+    // tree2.insert(arrayOf(10, 5, 15, 2, 7, 12, 17))
+    val root2 = VNode(10)
+    root2.left = VNode(5)
+    root2.right = VNode(15)
+    root2.left?.left = VNode(2)
+    root2.left?.right = VNode(7)
+    root2.right?.left = VNode(12)
+    root2.right?.right = VNode(17)
+    levelOrderTraversal(root2).let(::println)
 }
 
-fun levelOrderTraversal(root: TreeNode?): List<List<Int>> {
+fun levelOrderTraversal(root: VNode?): List<List<Int>> {
     if (root == null) return emptyList()
 
     val output = mutableListOf<List<Int>>()
-    val queue: Queue<TreeNode> = LinkedList()
+    val queue: Queue<VNode> = LinkedList()
     queue.add(root)
 
     while (queue.isNotEmpty()) {

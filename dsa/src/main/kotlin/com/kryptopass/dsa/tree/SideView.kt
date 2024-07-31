@@ -27,23 +27,23 @@ fun main() {
     node.left = Node(11)
     node.right = Node(1)
 
-    node.left!!.left = Node(null)
+    node.left!!.left = null
     node.left!!.right = Node(7)
     node.right!!.left = Node(2)
     node.right!!.right = Node(8)
 
-    node.left?.right?.left = Node(null)
-    node.left?.right?.right = Node(null)
-    node.right!!.left?.left = Node(null)
+    node.left?.right?.left = null
+    node.left?.right?.right = null
+    node.right!!.left?.left = null
     node.right!!.left?.right = Node(3)
-    node.right!!.right?.left = Node(null)
-    node.right!!.right?.right = Node(null)
+    node.right!!.right?.left = null
+    node.right!!.right?.right = null
 
     node.right?.left?.right?.left = Node(5)
-    node.right?.left?.right?.right = Node(null)
+    node.right?.left?.right?.right = null
 
-    // leftView(node).also(::println)          // [7, 11, 7, 3, 5]
-    // rightView(node).also(::println)         // [7, 1, 8, 3, 5]
+    leftView(node).also(::println)          // [7, 11, 7, 3, 5]
+    rightView(node).also(::println)         // [7, 1, 8, 3, 5]
 }
 
 fun rightView(root: Node?): List<Int?> {

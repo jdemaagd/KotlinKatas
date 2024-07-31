@@ -31,19 +31,43 @@ Time Complexity: O(n)
 Space Complexity: O(n), worst case for unbalanced tree
  */
 fun main() {
-    val tree = BinaryTree()
-    tree.insert(arrayOf(1, 7, 8, null, null, 2, 5, 3, null, null, 6, 4, 10, null, null, null, null, null, 9))
-    println(diameterOfTree(tree.root))  // 6
+    //val tree = BinaryTree()
+    //tree.insert(arrayOf(1, 7, 8, null, null, 2, 5, 3, null, null, 6, 4, 10, null, null, null, null, null, 9))
+    // 1
+    // 7, 8
+    // null, null, 2, 5
+    // 3, null,
+    val root = VNode(1)
+
+    root.left = VNode(7)
+    root.right = VNode(8)
+
+    root.left?.left = null
+    root.left?.right = null
+    root.right?.left = VNode(2)
+    root.right?.right = VNode(5)
+
+    root.right?.left?.left = VNode(3)
+    root.right?.left?.right = null
+    root.right?.right?.left = null
+    root.right?.right?.right = VNode(6)
+
+    root.right?.left?.left?.left = VNode(4)
+    root.right?.left?.left?.right = null
+    root.right?.right?.right?.left = null
+    root.right?.right?.right?.right = VNode(10)
+
+    println(diameterOfTree(root))  // 6
 }
 
-fun diameterOfTree(root: TreeNode?): Int {
+fun diameterOfTree(root: VNode?): Int {
     if (root == null) {
         return 0
     }
 
     var maxDiameter = 0
 
-    fun dfs(node: TreeNode?): Int {
+    fun dfs(node: VNode?): Int {
         if (node == null) {
             return -1
         }
